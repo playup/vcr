@@ -1,7 +1,7 @@
 language: ruby
 env: CUCUMBER_FORMAT=progress
 bundler_args: --without extras
-script: "bundle exec rspec spec"
+script: "bundle exec rspec spec --format progress"
 rvm:
   - jruby-19mode
   - rbx-19mode
