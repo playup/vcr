@@ -10,7 +10,7 @@ require 'rake'
 require "rspec/core/rake_task"
 
 RSpec::Core::RakeTask.new(:spec) do |t|
-  t.verbose = false
+  t.verbose = true
 
   # we require spec_helper so we don't get an RSpec warning about
   # examples being defined before configuration.
