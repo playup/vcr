@@ -21,7 +21,7 @@ module VCR
       # the after_request hook.
       set_typed_request_for_after_hook(req_type)
 
-      time_travel if VCR.configuration.simulate_real_response_times?
+      time_travel if req_type == :stubbed && VCR.configuration.simulate_real_response_times?
 
       send "on_#{req_type}_request"
     end
@@ -107,7 +107,7 @@ module VCR
 
     def time_travel
       # Playback vcr cassettes in realtime (but use Timecop to timetravel between requests)
-      runtimes = stubbed_response.headers['X-Runtime']
+      runtimes = stubbed_response && stubbed_response.headers['X-Runtime']
       runtimes.each do |runtime|
         time_step = runtime.to_f
         Timecop.travel(Time.now + time_step) # because Timecop only travels in seconds
