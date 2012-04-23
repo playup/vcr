@@ -3,7 +3,6 @@
 Record your test suite's HTTP interactions and replay them during future test runs for fast, deterministic, accurate tests.
 
 [![Build Status](https://secure.travis-ci.org/myronmarston/vcr.png?branch=master)](http://travis-ci.org/myronmarston/vcr)
-[![Build Status](https://secure.travis-ci.org/myronmarston/vcr.png?branch=simulate_real_response_times)](http://travis-ci.org/playup/vcr)
 
 ## Synopsis
 
