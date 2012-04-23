@@ -391,6 +391,13 @@ module VCR
       invoke_hook(:preserve_exact_body_bytes, http_message, VCR.current_cassette).any?
     end
 
+    # Instruct VCR to playback cassettes, simulating real response times
+    # by time travelling the amount of time the response took when recorded.
+    attr_writer :simulate_real_response_times
+    def simulate_real_response_times?
+      !!@simulate_real_response_times
+    end
+
   private
 
     def initialize

@@ -266,4 +266,14 @@ describe VCR::Configuration do
       end
     end
   end
+
+  describe '#simulate_real_response_times=' do
+    [true, false].each do |val|
+      it "sets the simulate_real_response_times to #{val} when set to #{val}" do
+        subject.simulate_real_response_times = val
+        subject.simulate_real_response_times?.should eq(val)
+      end
+    end
+  end
+
 end
